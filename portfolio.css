@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    background-color: black;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 2rem;
+    color: #eeb416;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+nav a {
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+    color: #eeb416;
+    border-bottom: 3px solid #eeb416;
+}
+
+/* Carousel Styles */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 40px;
+}
+
+.carousel-slide.active {
+    left: 0;
+    opacity: 1;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #eeb416;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.indicator.active {
+    background-color: #fff;
+}
+
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.nav-btn {
+    font-size: 30px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.nav-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Style for the text */
+/* Style for the text */
+.slide-text {
+  position: absolute;
+  top: 50%;              /* Centers the text vertically */
+  left: 50%;             /* Centers the text horizontally */
+  transform: translate(-50%, -50%);  /* Adjusts to perfectly center the text */
+  color: #fff;
+  font-size: 60px;       /* Increase font size */
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  padding: 20px 40px;    /* Increase padding if needed */
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;  /* Smooth transition for floating effect */
+  white-space: nowrap;   /* Prevent text from wrapping to a new line */
+  overflow: hidden;      /* Prevents any overflow if the text is too long */
+  text-overflow: ellipsis; /* Adds ellipsis (...) if text overflows */
+  z-index: 1;            /* Ensure the text stays on top of the image */
+  display: inline-block; /* Ensure the text behaves like an inline block element */
+}
+
+/* On hover, make the text grow */
+.slide-text:hover {
+  transform: translate(-50%, -50%) scale(1.2);  /* Increases text size by 20% */
+  z-index: 2; /* Makes sure the text is clickable and on top */
+}
+
+/* Style the link inside slide-text */
+.slide-text a {
+  color: #fff;  /* Set the link color to white */
+  text-decoration: none;  /* Remove the underline */
+  display: inline-block; /* Ensure the link is treated as an inline block */
+  padding: 10px;  /* Add padding for better clickable area */
+}
+
+.slide-text a:hover {
+  color: #eeb416;  /* Change the color on hover */
+  text-decoration: none;  /* Remove underline on hover */
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .carousel-slide img {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 995px) {
+    .carousel-slide img {
+        padding: 10px;
+    }
+
+    .slide-text {
+        font-size: 24px;
+    }
+
+    .nav-btn {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-slide img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    .slide-text {
+        font-size: 20px;
+    }
+
+    .nav-btn {
+        font-size: 20px;
+    }
+
+    .carousel-indicators {
+        bottom: 10px;
+    }
+
+    .indicator {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-slide img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+    }
+
+    .slide-text {
+        font-size: 18px;
+        bottom: 40px;
+    }
+
+    .carousel-nav {
+        display: none;
+    }
+
+    .carousel-indicators {
+        bottom: 5px;
+    }
+
+    .indicator {
+        width: 6px;
+        height: 6px;
+    }
+}

@@ -1,0 +1,91 @@
+
+
+/*{
+  margin:0; padding:0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+    background-color: #000;
+}
+
+.container{
+  max-width: 85%;
+  margin:20px auto;
+}
+
+.container .title{
+  font-size: 25px;
+  background-color: #000;
+  color:#fff;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+  padding:15px;
+}
+
+.container .image-container{
+  columns:3 250px;
+  gap:15px;
+}
+
+.container .image-container img{
+  margin-bottom: 10px;
+  border-radius: 5px;
+  width: 100%;
+}//
+
+/* Style for the body */
+body {
+  background-color: black;  /* Set the background color to black */
+  color: white;             /* Set text color to white to ensure visibility on the dark background */
+  font-family: Arial, sans-serif;
+}
+
+/* Style for the overall container */
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style for the image container (grid layout) */
+.image-container {
+  display: grid;
+  background-color: black;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Grid with flexible columns */
+  gap: 20px; /* Space between images */
+  justify-items: center; /* Centers the images horizontally */
+}
+
+/* Style for the images */
+.image-container img {
+  width: 100%;
+  height: auto; /* Ensure the aspect ratio is maintained */
+  border-radius: 10px; /* Optional: add rounded corners to the images */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for images */
+.image-container img:hover {
+  transform: scale(1.05); /* Slightly enlarge the image when hovered */
+}
+
+/* Logo style */
+header .logo {
+  font-size: 2rem;
+  color: #eeb416;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.5s ease;
+  text-decoration: none;  /* Remove the underline from the logo */
+}
+
+header .logo:hover {
+  transform: scale(1.1);
+}
+
+/* Header style to add some padding */
+header {
+  padding: 20px;
+  text-align: left;
+}

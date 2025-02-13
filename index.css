@@ -1,0 +1,584 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-family: arial, sans-serif;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 3rem;
+    color: #eeb416;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+    justify-content: left;
+    padding-left: 100px;
+}
+
+.logo:hover{
+    transform: scale(1.1);
+}
+
+/* Landing Section - Fullscreen */
+.landing {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Foreground Image (Full Fit) */
+.landing-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures full-screen coverage */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Welcome Text */
+.landing-text {
+    font-size: 80px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    position: relative;
+}
+
+
+
+/*nav a{
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active{
+    color: #eeb416;
+    border-bottom: 3px solid #eeb416;
+}
+
+@media(max-width:995px){
+    nav{
+        position: absolute;
+        display: none;
+        top: 0;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid #eeb416;
+        border-bottom: 3px solid #eeb416;
+        border-bottom-left-radius: 2rem;
+        padding: 1rem solid;
+        background-color: #161616;
+        border-top: 0.1rem solid rgba(0,0,0,0.1);
+    }
+
+    nav.active{
+        display: block;
+    }
+
+    nav a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    nav a:hover,
+    nav a.active{
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #eeb416;
+    }
+}*/
+
+section{
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+}
+.pages{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    color: #eeb416;
+    
+ }
+
+       
+ .pages:nth-child(odd){
+    background: #161616;
+ }
+
+ .home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: black;
+}
+
+.home .home-content h1{
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+span{
+    color: #eeb416;
+}
+
+.home-content h3{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.home-content p{
+    font-size: 1.6rem;
+}
+
+.home-img{
+    border-radius: 60%;
+}
+
+.home-img img{
+    position: relative;
+    width: 23vw;
+    border-radius: 10%;
+    box-shadow: 0 0 25px solid #eeb416;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.home-img img:hover{
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.social-icons a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid #eeb416;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color: #eeb416;
+}
+
+.social-icons a:hover{
+    color: black;
+    transform: scale(1.3) translateY(-5px);
+    background-color: #eeb416;
+    box-shadow: 0  0 25px #eeb416;
+}
+
+.btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: black;
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #eeb416;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 2px solid #eeb416;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover{
+    transform: scale3d(1.03);
+    background-color: #eeb416;
+    color: black;
+    box-shadow: 0 0 25px #eeb416;
+}
+
+.typing-text{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.typing-text span{
+    position: relative;
+}
+
+.typing-text span::before{
+    content: "";
+    color: #eeb416;
+    animation: words 20s infinite;
+}
+
+.typing-text span::after{
+    content: "";
+    background-color: black;
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid black;
+    right: -8;
+    animation: cursor 0.6s infinite;
+}
+
+@keyframes cursor{
+    to{
+        border-left: 3px solid #eeb416;
+    }
+}
+@keyframes words{
+    0%, 20%{
+        content: " a Travel Curator";
+    }
+    21%, 40%{
+        content: "an Event Organizer";
+    }
+    41%, 60%{
+        content: "a Consultant";
+    }
+    61%, 80%{
+        content: "an Enterpreneur";
+    }
+    81%, 100%{
+        content: "a Content Creator";
+    }
+}
+
+@media (max-width: 1000px){
+    .home{
+        gap: 4rem;
+    }
+}
+
+@media(max-width:995px){
+    .home{
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+
+    .home .home-content h3{
+        font-size: 2.5rem;
+    }
+
+    .home-content h1{
+        font-size: 5rem;
+    }
+
+    .home-img img{
+        width: 70vw;
+        margin-top: 4rem;
+    }
+}
+.container{
+    max-width: 1224px;
+    width: 90%;
+    margin: auto;
+    padding: 40px 0;
+}
+
+.photo-gallery{
+    display: flex;
+    gap: 20px;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.content{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: 0.6s;
+}
+
+.content:hover{
+    opacity: 1;
+}
+/* Skills Section Styling */
+.skills {
+    background-color: black;  /* Light background color for the skills section */
+    padding: 50px 20px;         /* Add padding for spacing */
+    text-align: center;         /* Center align the content */
+    margin-top: 40px;           /* Add some space from the content above */
+}
+
+.skills h2 {
+    font-size: 36px;            /* Larger font for the title */
+    font-weight: bold;
+    color: #333;                /* Dark color for contrast */
+    margin-bottom: 20px;        /* Add space below the title */
+}
+
+.skills-list ul {
+    list-style-type: none;      /* Remove default bullet points */
+    padding: 120px;
+}
+
+.skills-list li {
+    font-size: 20px;            /* Font size for skill items */
+    color: #555;                /* Dark gray color */
+    padding: 10px 0;            /* Add space between each item */
+    transition: color 0.3s;     /* Smooth transition for hover effect */
+}
+
+.skills-list li:hover {
+    color: white; 
+    cursor: default;            /* Change color on hover */           /* Pointer cursor on hover */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .skills h2 {
+        font-size: 28px;         /* Smaller font size for smaller screens */
+    }
+    
+    .skills-list li {
+        font-size: 18px;         /* Adjust font size for smaller screens */
+    }
+}
+
+/* Experience Section */
+.experience {
+    padding: 50px 0;
+    background-color: black;
+    text-align: center;
+}
+
+.experience h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #c59e34;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: left;
+}
+
+.card h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.card ul li {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.card ul li:first-child {
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-text {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.footer-text a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+.footer-text a:hover {
+    text-decoration: underline;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon {
+    font-size: 2em;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #ffcc00;
+}
+
+/* Responsive Design for Footer */
+@media (max-width: 768px) {
+    .footer-text {
+        font-size: 1em;
+    }
+
+    .footer-social {
+        gap: 15px;
+    }
+
+    .social-icon {
+        font-size: 1.8em;
+    }
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: none;
+    padding: 15px 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+.navbarr{
+        display: flex;
+        justify-content: flex-end; /* Pushes nav links to the right */
+        padding: 20px;
+        position: fixed; /* Keeps navbar fixed at the top */
+        width: 100%;
+}
+
+.navbar nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-link {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: #eeb416;
+    color: black;
+}
+
+/* Adding padding to the body so that the navbar doesn't overlap the sections */
+body {
+    padding-top: 70px; /* Adjust this value if the navbar height changes */
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .navbar .nav-link {
+        font-size: 1.1em;
+        padding: 8px 15px;
+    }
+}
