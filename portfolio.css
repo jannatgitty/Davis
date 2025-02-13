@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -31,6 +29,7 @@ header {
     font-weight: 800;
     cursor: pointer;
     transition: 0.5s ease;
+    text-decoration: none;
 }
 
 .logo:hover {
@@ -52,7 +51,6 @@ nav a.active {
     border-bottom: 3px solid #eeb416;
 }
 
-/* Carousel Styles */
 .carousel-container {
     position: relative;
     width: 100%;
@@ -60,21 +58,28 @@ nav a.active {
     overflow: hidden;
 }
 
-.carousel-slide {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 100%;
-    opacity: 0;
-    transition: all 1s ease;
+
+.carousel {
+    display: flex;
+    width: 300%; /* 3 slides */
+    transition: transform 0.8s ease-in-out; /* Smooth transition */
 }
 
-.carousel-slide img {
+.carousel-slide img{
     width: 100%;
     height: 100%;
     object-fit: cover;
     padding: 40px;
+}
+
+.carousel-slide{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 100;
+    left: 100;
+    opacity: 100;
+    transition: all 1s ease;
 }
 
 .carousel-slide.active {
@@ -89,6 +94,7 @@ nav a.active {
     transform: translateX(-50%);
     display: flex;
     gap: 10px;
+    z-index: 10; /* Ensure it's above the images */
 }
 
 .indicator {
@@ -111,6 +117,8 @@ nav a.active {
     display: flex;
     justify-content: space-between;
     transform: translateY(-50%);
+    padding: 0 5%;
+    z-index: 10;
 }
 
 .nav-btn {
@@ -169,19 +177,16 @@ nav a.active {
 
 
 /* Responsive Design */
+/* 🌟 RESPONSIVE DESIGN */
 @media (max-width: 1200px) {
-    .carousel-slide img {
-        padding: 20px;
+    .slide-text {
+        font-size: 32px;
     }
 }
 
-@media (max-width: 995px) {
-    .carousel-slide img {
-        padding: 10px;
-    }
-
+@media (max-width: 992px) {
     .slide-text {
-        font-size: 24px;
+        font-size: 28px;
     }
 
     .nav-btn {
@@ -190,53 +195,86 @@ nav a.active {
 }
 
 @media (max-width: 768px) {
-    .carousel-slide img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
+    .slide-text {
+        font-size: 24px;
+        text-align: center;
+        width: 80%;
     }
 
-    .slide-text {
-        font-size: 20px;
+    .carousel-slide img {
+        object-fit: cover;
+        height: 90vh;
     }
 
     .nav-btn {
         font-size: 20px;
+        padding: 8px;
     }
 
     .carousel-indicators {
         bottom: 10px;
     }
-
-    .indicator {
-        width: 8px;
-        height: 8px;
+}
+@media (max-width: 768px) {
+    .slide-text {
+        white-space: normal;  /* ✅ Allow text wrapping */
+        width: 90%;
     }
 }
 
 @media (max-width: 480px) {
-    .carousel-slide img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-        padding: 0;
-    }
-
     .slide-text {
         font-size: 18px;
-        bottom: 40px;
+        width: 90%;
+    }
+
+    .carousel-slide img {
+        height: 80vh;
     }
 
     .carousel-nav {
-        display: none;
-    }
-
-    .carousel-indicators {
-        bottom: 5px;
+        display: none; /* Hide nav buttons on very small screens */
     }
 
     .indicator {
         width: 6px;
         height: 6px;
     }
+}
+.slide-text {
+    font-size: 1.5rem;  /* ✅ Adjust font size for very small screens */
+}
+
+
+@media (max-width: 600px) {
+    .carousel-nav {
+        display: flex !important; /* Force show nav buttons */
+    }
+
+    .indicator {
+        width: 10px;
+        height: 10px;
+    }
+
+    .carousel-indicators {
+        bottom: 3%;
+    }
+}
+
+@media (max-width: 400px) {
+    .carousel-nav {
+        padding: 0 3%;
+    }
+
+    .indicator {
+        width: 8px;
+        height: 8px;
+    }
+
+    .carousel-indicators {
+        bottom: 2%;
+    }
+}
+.slide-text {
+    font-size: 1.5rem;  /* ✅ Adjust font size for very small screens */
 }
