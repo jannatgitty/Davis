@@ -87,15 +87,16 @@ nav a.active {
     opacity: 1;
 }
 
+/* Ensure indicators are visible on small screens */
 .carousel-indicators {
     position: absolute;
-    bottom: 20px;
+    bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 10px;
+    gap: 8px;
+    z-index: 10; /* Ensure it's above the images */
 }
-
 .indicator {
     width: 10px;
     height: 10px;
@@ -116,12 +117,13 @@ nav a.active {
     display: flex;
     justify-content: space-between;
     transform: translateY(-50%);
+    padding: 0 5%;
 }
 
 .nav-btn {
     font-size: 30px;
     color: #fff;
-    background: rgba(0, 0, 0, 0.5);
+    background: none;
     padding: 10px;
     border-radius: 50%;
     cursor: pointer;
@@ -230,5 +232,36 @@ nav a.active {
     .indicator {
         width: 6px;
         height: 6px;
+    }
+}
+
+/* 🛠 Fix for Small Screens */
+@media (max-width: 600px) {
+    .carousel-nav {
+        display: flex !important; /* Force show nav buttons */
+    }
+
+    .indicator {
+        width: 10px;
+        height: 10px;
+    }
+
+    .carousel-indicators {
+        bottom: 3%;
+    }
+}
+
+@media (max-width: 400px) {
+    .carousel-nav {
+        padding: 0 3%;
+    }
+
+    .indicator {
+        width: 8px;
+        height: 8px;
+    }
+
+    .carousel-indicators {
+        bottom: 2%;
     }
 }
